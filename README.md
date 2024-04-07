@@ -4,7 +4,7 @@ Code repository for an in-browser calculator for learning object manipulation an
 
 ## To do's
 - [X] Basic calculator HTML Structure
-- [ ] CSS Styling
+- [X] CSS Styling
 - [ ] Add basic calculator functionality
 - [ ] Add delete button and A/C
 - [ ] Add correct operator precedence 
