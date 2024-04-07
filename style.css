@@ -1,0 +1,152 @@
+/*
+PRIMARY: #68A68B
+SECONDARY:#E5D18F
+ACCENT: #642635
+flex grow 1 on ctrl_btn_db to fill space
+set max button max-width
+set flex shrink 1 for everything
+*/
+@font-face {
+font-family:"SyneMono-Regular";
+    src: url('fonts/SyneMono-Regular.ttf') format('truetype');
+}
+
+.content {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin: 30px 25px 0px 25px;
+    height:80vh; /* height, smaller is higher */
+}
+
+.calculator_wrapper {
+    display:flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    width:560px;
+    justify-content: center;
+    align-items: center;
+    background-color:#2E2E35;
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px #474244;
+}
+
+.calculator_display {
+    flex: 1 0 auto;
+    max-width:500px;
+    min-height:60px;
+    width:500px;
+    background-color:#252535;
+    box-shadow: 0 0 1px 5px #1F1F2C inset;
+    padding:15px;
+    border:15px solid #282836;
+    border-bottom-width: 0px;
+    border-radius: 5px;
+    color:#97F1CA;
+    font-size: 40px;
+    text-align:right; 
+    font-family:"SyneMono-Regular";
+    text-shadow: 0 0 5px #68A68B;
+}
+
+.calculator_buttons {
+    display: flex; /*the legit odin way; not grid*/
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    flex: 1 1 auto;
+    width: 100%;
+    margin:0;
+    gap:10px;
+    padding:15px;
+    max-width: 530px;
+    height:410px;
+    aspect-ratio: 3/4;
+    background-color:#DAD0D1;
+    border-radius: 5px;
+}
+
+.c_row {
+    display:flex;
+    gap:5px;
+    width:100%;
+}
+
+.ctrl_btn,.ctrl_btn_op,.ctrl_btn_db {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width:100%;
+    font-size: 50px;
+    color:#F3EDF5;
+}
+
+.ctrl_btn,.ctrl_btn_db {
+    background-color: #827A7E;
+    border:0;
+    border-radius:5px;
+    box-shadow: 3px 5px 2px #423F40;
+}
+
+.ctrl_btn:hover,.ctrl_btn_db:hover {
+    background-color: #787174;
+}
+
+.ctrl_btn:active,.ctrl_btn_db:active {
+    background-color: #5D575A;
+}
+
+.ctrl_btn_db{
+    flex-grow: 2;
+}
+
+.ctrl_btn_op {
+    background-color: #504B4E;
+    border:0;
+    border-radius:5px;
+    box-shadow: 3px 5px 2px #3B3739;
+}
+
+.ctrl_btn_op:hover {
+    background-color: #454144;
+}
+#zero {padding-right: 15px;}
+
+#AC,#C {background-color: #87243C; box-shadow: 3px 5px 2px #551827;}
+#AC:hover,#C:hover {background-color: #711E32;}
+#AC:active,#C:active {background-color: #611C2D;}
+
+#equal {background-color: #F4C24B; box-shadow: 3px 5px 2px #B98233;}
+#equal:hover {background-color: #D8AC43;}
+#equal:active {background-color: #BB9439;}
+
+
+.footer {
+    z-index:-1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    font-size:19px;
+    font-weight:bold;
+    height: 72px;
+    width:100%;
+    bottom: 0;
+}
+
+
+.yagrr {
+    font-weight: bold; 
+    text-decoration: none;
+    color:#FFFFFF;
+    transition: all .2s ease-in-out
+}
+
+.yagrr:hover {
+    text-shadow: 0 0 20px #FFFFFF;
+    -webkit-animation: 1s ease-in-out;
+    -moz-animation:  1s ease-in-out ;
+    animation:  1s ease-in-out;
+}

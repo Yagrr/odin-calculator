@@ -9,43 +9,45 @@
     <body>
 
         <div class="content">
-            <div class="calculator_display"></div>
-            <div class="calculator_buttons" draggable="false">
-                    <div class="c_row4">
-                        <button class="ctrl_btn" value="AC">A/C</button>
-                        <button class="ctrl_btn"  value="C">C</button>
+            <div class="calculator_wrapper">
+                <div class="calculator_display">test</div>
+                <div class="calculator_buttons" draggable="false">
+                    <div class="c_row">
+                        <button class="ctrl_btn" id="AC" value="AC">A/C</button>
+                        <button class="ctrl_btn" id="C" value="C">C</button>
                         <button class="ctrl_btn" value="%">%</button>
                         <button class="ctrl_btn_op" value="÷">÷</button>
                     </div>
-                    <div class="c_row3">
+                    <div class="c_row">
                         <button class="ctrl_btn" value="7">7</button>
                         <button class="ctrl_btn" value="8">8</button>
                         <button class="ctrl_btn" value="9">9</button>
                         <button class="ctrl_btn_op" value="×">×</button>
                     </div>
-                    <div class="c_row2">
+                    <div class="c_row">
                         <button class="ctrl_btn" value="4">4</button>
                         <button class="ctrl_btn" value="5">5</button>
                         <button class="ctrl_btn" value="6">6</button>
                         <button class="ctrl_btn_op" value="-">-</button>
                     </div>
-                    <div class="c_row1">
+                    <div class="c_row">
                         <button class="ctrl_btn" value="1">1</button>
                         <button class="ctrl_btn" value="2">2</button>
                         <button class="ctrl_btn" value="3">3</button>
                         <button class="ctrl_btn_op" value="+">+</button>
                     </div>
-                    <div class="c_row0">
-                        <button class="ctrl_btn_db" value="0">0</button>
+                    <div class="c_row">
+                        <button class="ctrl_btn_db" id="zero" value="0">0</button>
                         <button class="ctrl_btn" value=".">.</button>
-                        <button class="ctrl_btn_op" value="=">=</button>
+                        <button class="ctrl_btn_op" id="equal" value="=">=</button>
                     </div>
+                </div>
             </div>
         </div>
 
 
         <div class="footer"><a class="yagrr" href="https://github.com/Yagrr/odin-calculator">Created by Yagrr</a></div>
-    
         <div class="bg"></div>
+        <script src="calc.js"></script>
     </body>
 </html>>
