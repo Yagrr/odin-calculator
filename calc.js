@@ -60,8 +60,7 @@ document.addEventListener('keydown', (e) => {
                 kbBtn = keyPressed.toLowerCase;
         }
         kbBtn = 'btn_' + kbBtn 
-        pressedBtn = document.getElementById(kbBtn);
-        pressedBtn.click();
+        document.getElementById(kbBtn).click();
     }
 });
 
