@@ -121,15 +121,14 @@ body {
     box-shadow: 3px 5px 2px #423F40;
 }
 
-.ctrl_btn:hover {
-    background-color: #787174;
+.ctrl_btn:hover { background-color: #787174;
 }
 .ctrl_btn:active {
 
     background-color: #5D575A;
 }
 
-#zero {
+.zero {
     flex-grow: 2;
 }
 
@@ -148,15 +147,15 @@ body {
     background-color: #353133;
 }
 
-#zero {padding-right: 20px;}
+.zero {padding-right: 20px;}
 
-#AC {background-color: #87243C; box-shadow: 3px 5px 2px #551827;}
-#AC:hover {background-color: #711E32;}
-#AC:active {background-color: #611C2D;}
+.AC {background-color: #87243C; box-shadow: 3px 5px 2px #551827;}
+.AC:hover {background-color: #711E32;}
+.AC:active {background-color: #611C2D;}
 
-#equal {background-color: #F4C24B; box-shadow: 3px 5px 2px #B98233;}
-#equal:hover {background-color: #D8AC43;}
-#equal:active {background-color: #BB9439;}
+#btn_equal {background-color: #F4C24B; box-shadow: 3px 5px 2px #B98233;}
+#btn_equal:hover {background-color: #D8AC43;}
+#btn_equal:active {background-color: #BB9439;}
 
 
 .footer {
