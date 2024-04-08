@@ -5,7 +5,6 @@
 // - Make operator buttons toggle
 // - floatingPoint and PlusMinus function
 // - AC button
-
 const disp = document.querySelector('.calculator_display');
 const numBtn = document.querySelectorAll(".num_btn");
 const opBtn = document.querySelectorAll(".op");
@@ -25,6 +24,47 @@ let calcState = 0;
 let canCalculate = false;
 let result = 0;
 refreshDisp(result);
+
+// kb support
+document.addEventListener('keydown', (e) => {
+    e.preventDefault;
+    let keyCheck = '+-*/=%.cC0123456789';
+    let keyPressed = e.key;
+    if (keyCheck.includes(keyPressed)) {
+        let kbBtn = '0';
+        switch(keyPressed) {
+            case '+':
+               kbBtn = 'plus';
+               break;
+            case '-':
+                kbBtn = 'minus';
+               break;
+            case '*':
+                kbBtn = 'mult';
+                break;
+            case '/':
+                kbBtn = 'divide';
+                break;
+            case '=':
+                kbBtn = 'equal';
+                break;
+            case '%':
+                kbBtn = 'percent'
+                break;
+            case '.':
+                kbBtn = 'point';
+                break;
+            case '0':
+                kbBtn = 'zero';
+            default:
+                kbBtn = keyPressed.toLowerCase;
+        }
+        kbBtn = 'btn_' + kbBtn 
+        pressedBtn = document.getElementById(kbBtn);
+        pressedBtn.click();
+    }
+});
+
 
 clearBtn.addEventListener("click", () => {
     playSound(clearBtn);
@@ -69,11 +109,11 @@ function playSound(e) {
     let audio = document.createElement('audio');
     audio.src = "audio/button-press-pixabay.mp3";
     e.appendChild(audio);
-    audio.volume = 0.01;
+    audio.volume = 0.5;
     audio.play();
 }
 
-numBtn.forEach( (button) => {
+numBtn.forEach( (button) => { 
     button.addEventListener("click", () => {
         playSound(button);
         if (dispVal.includes('ERROR')) {
