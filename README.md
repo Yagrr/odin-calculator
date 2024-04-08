@@ -10,3 +10,6 @@ Code repository for an in-browser calculator for learning object manipulation an
 - [X] Add error handling (bad expression)
 - [X] Add keyboard support
 - [ ] Mobile compatibility 
+
+## Preview
+![Calculator preview](preview.png)
