@@ -6,9 +6,40 @@ flex grow 1 on ctrl_btn_db to fill space
 set max button max-width
 set flex shrink 1 for everything
 */
+
 @font-face {
 font-family:"SyneMono-Regular";
     src: url('fonts/SyneMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+font-family:"AzeretMono";
+    src: url('fonts/AzeretMono.ttf') format('truetype');
+}
+
+body {
+    overflow:hidden;
+    overflow-x:hidden;
+    position:relative;
+    height:100%;
+    margin:0;
+}
+
+.bg {
+    z-index: -999;
+    min-height: 200%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin:0;
+    background-color: #F2F2F2;
+}
+
+body {
+    font-family:'AzeretMono';
 }
 
 .content {
@@ -16,7 +47,7 @@ font-family:"SyneMono-Regular";
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    margin: 30px 25px 0px 25px;
+    margin: 0px 25px 0px 25px;
     height:80vh; /* height, smaller is higher */
 }
 
@@ -44,10 +75,10 @@ font-family:"SyneMono-Regular";
     border-bottom-width: 0px;
     border-radius: 5px;
     color:#97F1CA;
-    font-size: 40px;
+    font-size: 50px;
     text-align:right; 
     font-family:"SyneMono-Regular";
-    text-shadow: 0 0 5px #68A68B;
+    text-shadow: 0 0 8px #68A68B;
 }
 
 .calculator_buttons {
@@ -73,7 +104,7 @@ font-family:"SyneMono-Regular";
     width:100%;
 }
 
-.ctrl_btn,.ctrl_btn_op,.ctrl_btn_db {
+.ctrl_btn,.ctrl_btn_op {
     display:flex;
     justify-content: center;
     align-items: center;
@@ -83,22 +114,22 @@ font-family:"SyneMono-Regular";
     color:#F3EDF5;
 }
 
-.ctrl_btn,.ctrl_btn_db {
+.ctrl_btn {
     background-color: #827A7E;
     border:0;
     border-radius:5px;
     box-shadow: 3px 5px 2px #423F40;
 }
 
-.ctrl_btn:hover,.ctrl_btn_db:hover {
+.ctrl_btn:hover {
     background-color: #787174;
 }
+.ctrl_btn:active {
 
-.ctrl_btn:active,.ctrl_btn_db:active {
     background-color: #5D575A;
 }
 
-.ctrl_btn_db{
+#zero {
     flex-grow: 2;
 }
 
@@ -112,11 +143,16 @@ font-family:"SyneMono-Regular";
 .ctrl_btn_op:hover {
     background-color: #454144;
 }
-#zero {padding-right: 15px;}
 
-#AC,#C {background-color: #87243C; box-shadow: 3px 5px 2px #551827;}
-#AC:hover,#C:hover {background-color: #711E32;}
-#AC:active,#C:active {background-color: #611C2D;}
+.ctrl_btn_op:active {
+    background-color: #353133;
+}
+
+#zero {padding-right: 20px;}
+
+#AC {background-color: #87243C; box-shadow: 3px 5px 2px #551827;}
+#AC:hover {background-color: #711E32;}
+#AC:active {background-color: #611C2D;}
 
 #equal {background-color: #F4C24B; box-shadow: 3px 5px 2px #B98233;}
 #equal:hover {background-color: #D8AC43;}
@@ -140,12 +176,12 @@ font-family:"SyneMono-Regular";
 .yagrr {
     font-weight: bold; 
     text-decoration: none;
-    color:#FFFFFF;
+    color:#1E1E28;
     transition: all .2s ease-in-out
 }
 
 .yagrr:hover {
-    text-shadow: 0 0 20px #FFFFFF;
+    text-shadow: 0 0 20px #1E1E28;
     -webkit-animation: 1s ease-in-out;
     -moz-animation:  1s ease-in-out ;
     animation:  1s ease-in-out;
