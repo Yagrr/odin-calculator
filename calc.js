@@ -27,15 +27,17 @@ let result = 0;
 refreshDisp(result);
 
 clearBtn.addEventListener("click", () => {
+    playSound(clearBtn);
     clear();
 });
 
 function clear() {
-    if (dispVal === 'ERROR') {
+    if (dispVal.includes('ERROR')) {
         calcState = 0;
     }
     switch (calcState) {
-        case (0 || 1):
+        case 0:
+        case 1:
             x = y = result =  0;
             operator = '';
             calcState = 0;
@@ -57,21 +59,24 @@ function clear() {
 function refreshDisp(arg) {
     dispVal = String(arg);
     if (dispVal.length > 18) {
-        dispVal = "ERROR";
+        dispVal = "ERROR: OVERFLOW";
     }
     dispVal = dispVal.substring(0,18);
     disp.textContent = dispVal;
 }
 
+function playSound(e) {
+    let audio = document.createElement('audio');
+    audio.src = "audio/button-press-pixabay.mp3";
+    e.appendChild(audio);
+    audio.volume = 0.01;
+    audio.play();
+}
 
-// Weird implementation to detect edge cases where x = 0 or y = 0
-// so that they get replaced by button.value to avoid non-decimal
-// Ex: 01 02341
-// This still allows normal operations with x = 0
-// Ex: 0 x 12; 0 + 3
 numBtn.forEach( (button) => {
     button.addEventListener("click", () => {
-        if (dispVal === 'ERROR') {
+        playSound(button);
+        if (dispVal.includes('ERROR')) {
             clear();
         }
         if (dispVal === '0' && button.value === '0') {
@@ -104,7 +109,8 @@ numBtn.forEach( (button) => {
 
 opBtn.forEach( (button) => {
     button.addEventListener("click", () => {
-        if (dispVal === 'ERROR') {
+        playSound(button);
+        if (dispVal.includes('ERROR')) {
             clear();
         }
         switch(button.value) {
@@ -118,37 +124,43 @@ opBtn.forEach( (button) => {
                         return
                     case 3:
                         result = operate(operator,x,y);
-                        y = result
-                        refreshDisp(y);
+                        x = result
+                        refreshDisp(x);
                         return
                     default:
                         return;
                 }
             case ".":
                 switch(calcState) {
-                    case (0 || 1):
+                    case 0:
+                    case 1:
                         x = floatP(x);
                         refreshDisp(x);
                         return
-                    case (2 || 3):
+                    case 2:
+                    case 3:
                         y = floatP(y);
                         refreshDisp(y);
                         return
                 }
             case "pm":
                 switch(calcState) {
-                    case (0 || 1):
+                    case 0:
+                    case 1:
                         x = plusMinus(x);
                         refreshDisp(x);
                         return
-                    case (2 || 3):
+                    case 2:
+                    case 333:
                         y = plusMinus(y);
                         refreshDisp(y);
                         return
                 }
             case "%":
                 switch(calcState) {
-                    case (0 || 1 || 2):
+                    case 0:
+                    case 1:
+                    case 2:
                         x =  percent(x);
                         refreshDisp(x);
                         return
@@ -214,7 +226,7 @@ function operate(op,a,b) {
             result = divide(a,b)
             break;
     }
-    return String(result.toFixed(10)
+    return String(result.toFixed(5)
 )}
 
 // ops
@@ -233,7 +245,7 @@ function multiply(a,b) {
 
 function divide(a,b) {
     if (b === '0') {
-        dispVal = 'ERROR';
+        dispVal = 'ERROR: DIV BY 0';
     }
     return a/b
 }
