@@ -65,7 +65,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
 clearBtn.addEventListener("click", () => {
     playSound(clearBtn);
     clear();
@@ -191,7 +190,7 @@ opBtn.forEach( (button) => {
                         refreshDisp(x);
                         return
                     case 2:
-                    case 333:
+                    case 3:
                         y = plusMinus(y);
                         refreshDisp(y);
                         return
