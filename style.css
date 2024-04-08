@@ -35,7 +35,8 @@ body {
     top: 0;
     left: 0;
     margin:0;
-    background-color: #F2F2F2;
+    background: rgb(255,255,255);
+    background: linear-gradient(129deg, rgba(255,255,255,1) 0%, rgba(233,233,233,1) 47%, rgba(199,199,199,1) 79%, rgba(158,158,158,1) 100%); 
 }
 
 body {
@@ -60,7 +61,7 @@ body {
     align-items: center;
     background-color:#2E2E35;
     border-radius: 5px;
-    box-shadow: 5px 5px 2px #474244;
+    box-shadow: 5px 10px 25px #474244;
 }
 
 .calculator_display {
