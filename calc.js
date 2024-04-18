@@ -21,7 +21,6 @@ let dispVal ='0';
 // 2: op assigned
 // 3: y assigned, and result
 let calcState = 0; 
-let canCalculate = false;
 let result = 0;
 refreshDisp(result);
 
@@ -252,38 +251,21 @@ function operate(op,a,b) {
 
     switch(op) {
         case '+':
-            result = add(a,b);
+            result = a+b;
             break;
         case '-':
-            result = substract(a,b);
+            result = a-b;
             break;
         case '*':
-            result = multiply(a,b);
+            result = a*b;
             break;
         case '/':
-            result = divide(a,b)
+            if (b === '0') {
+                dispVal = 'ERROR: DIV BY 0';
+            } else {
+                result = a/b;
+            }
             break;
     }
     return String(result.toFixed(5)
 )}
-
-// ops
-
-function add(a,b) {
-    return a+b
-}
-
-function substract(a,b) {
-    return a-b
-}
-
-function multiply(a,b) {
-    return a*b
-}
-
-function divide(a,b) {
-    if (b === '0') {
-        dispVal = 'ERROR: DIV BY 0';
-    }
-    return a/b
-}
